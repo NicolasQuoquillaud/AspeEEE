@@ -1,0 +1,19 @@
+* installing *source* package 'selectsp' ...
+** using staged installation
+** help
+No man pages found in package  'selectsp' 
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+Error: le chargement du package ou de l'espace de noms a échoué pour 'selectsp' in namespaceExport(ns, exports) :
+exportations non définies : recode_and_filter_species
+Erreur : loading failed
+Exécution arrêtée
+*** arch - x64
+Error: le chargement du package ou de l'espace de noms a échoué pour 'selectsp' in namespaceExport(ns, exports) :
+exportations non définies : recode_and_filter_species
+Erreur : loading failed
+Exécution arrêtée
+ERROR: loading failed for 'i386', 'x64'
+* removing 'R:/ServicesRegionaux/Agents_Service_Connaissance/0-Stages_connaissance/2022_Stage_Nicolas_Quoquillaud/selectsp/selectsp.Rcheck/selectsp'
