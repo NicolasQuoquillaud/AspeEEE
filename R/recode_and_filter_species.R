@@ -1,8 +1,6 @@
 #' Recodage des codes espèces et exclusion de taxons
 #'
-#' Par exemple les carpes cuir, miroir, etc. sont regroupées sous un unique code CCX.
-#' Idem pour les vandoises en VAX.
-# 'Dans l'ouest Finistère, il n'y a que de l'épinoche => recodage de l'épinochette sur cette zone.
+#' Par exemple les carpes cuir, miroir, etc. sont regroupées sous un unique code CCO.
 #'
 #' @param df Dataframe standardisé contenant les données.
 #' @param sp_to_remove Vecteur texte contenant les codes à trois lettres des taxons à
@@ -12,6 +10,7 @@
 #' @export
 #'
 #' @importFrom stringr str_replace
+#' @importFrom dplyr mutate filter pull
 #'
 #' @examples
 #' \dontrun{
@@ -46,8 +45,7 @@ recode_and_filter_species <- function(df, sp_to_remove = NA) {
            esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "BBX", replacement = "BBG"),
            esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "VAB", replacement = "VAI"),
            esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "VAC", replacement = "VAI"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "PHX", replacement = "VAI"),
-           esp_code_alternatif = ifelse(esp_code_alternatif == "EPT" & x_wgs84 < (-4.1), "EPI", esp_code_alternatif))
+           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "PHX", replacement = "VAI"))
 
   # Permet de sélectionner les codes espèces dans le fichier "passerelle_taxo"
   # disponible dans le package aspe. On ne sélectionne que les codes "valides",
