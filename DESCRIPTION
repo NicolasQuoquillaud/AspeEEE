@@ -1,0 +1,13 @@
+Package: selectsp
+Title: Selection des especes et remplacement
+Version: 0.0.0.9000
+Authors@R: 
+    person("Quoquillaud", "Nicolas", , "nicodu02.06@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: permet de remplacer le code especes des especes d interet et eliminer les especes non pertinentes.
+Depends: R (>= 3.4.3)
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0.9000
+Imports: stringr

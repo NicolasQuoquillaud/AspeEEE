@@ -1,0 +1,21 @@
+* using log directory 'R:/ServicesRegionaux/Agents_Service_Connaissance/0-Stages_connaissance/2022_Stage_Nicolas_Quoquillaud/selectsp/selectsp.Rcheck'
+* using R version 4.1.2 (2021-11-01)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* using options '--no-manual --as-cran'
+* checking for file 'selectsp/DESCRIPTION' ... OK
+* this is package 'selectsp' version '0.0.0.9000'
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking serialization versions ... OK
+* checking whether package 'selectsp' can be installed ... ERROR
+Installation failed.
+See 'R:/ServicesRegionaux/Agents_Service_Connaissance/0-Stages_connaissance/2022_Stage_Nicolas_Quoquillaud/selectsp/selectsp.Rcheck/00install.out' for details.
+* DONE
+Status: 1 ERROR
