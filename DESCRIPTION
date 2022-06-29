@@ -1,10 +1,10 @@
-Package: selectsp
-Title: Selection des especes et remplacement
+Package: AspeEEE
+Title: Etude de l'effet de la présence d'une espèce sur l'ichtyofaune à partir de la base ASPE
 Version: 0.0.0.9000
 Authors@R: 
     person("Quoquillaud", "Nicolas", , "nicodu02.06@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: permet de remplacer le code especes des especes d interet et eliminer les especes non pertinentes.
+Description: Package développé pour étudier de l'expansion du spirlin dans le bassin Adour - Garonne.
 Depends: R (>= 3.4.3)
 License: GPL-3
 Encoding: UTF-8
