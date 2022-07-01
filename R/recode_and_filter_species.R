@@ -14,7 +14,7 @@
 #' @examples
 #' \dontrun{
 #' df_propre <- df_brut %>%
-#' recode_and_filter_species(sp_to_remove = c("OCL", "ASA", "ASL", "CRC, "PCC", "PFL", "HBG"))
+#' recode_and_filter_species(sp_to_remove = c("OCL", "ASA", "ASL", "CRC", "PCC", "PFL", "HBG"))
 #' }
 recode_and_filter_species <- function(df,
                                       sp_to_remove = NA) {
