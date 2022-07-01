@@ -9,15 +9,15 @@
 #' @return Le dataframe mis à jour.
 #' @export
 #'
-#' @importFrom stringr str_replace
-#' @importFrom dplyr mutate filter pull
+#' @importFrom dplyr mutate filter pull case_when
 #'
 #' @examples
 #' \dontrun{
 #' df_propre <- df_brut %>%
 #' recode_and_filter_species(sp_to_remove = c("OCL", "ASA", "ASL", "CRC, "PCC", "PFL", "HBG"))
 #' }
-recode_and_filter_species <- function(df, sp_to_remove = NA) {
+recode_and_filter_species <- function(df,
+                                      sp_to_remove = NA) {
 
   if(!is.na(sp_to_remove))
 
@@ -29,23 +29,28 @@ recode_and_filter_species <- function(df, sp_to_remove = NA) {
 
 
   df <- df %>%
-    mutate(esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "BRX", replacement = "BRE"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "CAX", replacement = "CAS"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "CAA", replacement = "CAS"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "CAD", replacement = "CAS"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "CAG", replacement = "CAS"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "CAK", replacement = "CCO"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "CCU", replacement = "CCO"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "CMI", replacement = "CCO"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "GAX", replacement = "GAH"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "GAM", replacement = "GAH"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "GOX", replacement = "GOU"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "GOO", replacement = "GOU"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "VAR", replacement = "VAN"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "BBX", replacement = "BBG"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "VAB", replacement = "VAI"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "VAC", replacement = "VAI"),
-           esp_code_alternatif = str_replace(esp_code_alternatif, pattern = "PHX", replacement = "VAI"))
+    mutate(
+      esp_code_alternatif = case_when(
+        esp_code_alternatif == "BRX" ~ "BRE",
+           esp_code_alternatif == "CAX" ~ "CAS",
+           esp_code_alternatif == "CAA" ~ "CAS",
+           esp_code_alternatif == "CAD" ~ "CAS",
+           esp_code_alternatif == "CAG" ~ "CAS",
+           esp_code_alternatif == "CAK" ~ "CCO",
+           esp_code_alternatif == "CCU" ~ "CCO",
+           esp_code_alternatif == "CMI" ~ "CCO",
+           esp_code_alternatif == "GAX" ~ "GAH",
+           esp_code_alternatif == "GAM" ~ "GAH",
+           esp_code_alternatif == "GOX" ~ "GOU",
+           esp_code_alternatif == "GOO" ~ "GOU",
+           esp_code_alternatif == "VAR" ~ "VAN",
+           esp_code_alternatif == "BBX" ~ "BBG",
+           esp_code_alternatif == "VAB" ~ "VAI",
+           esp_code_alternatif == "VAC" ~ "VAI",
+           esp_code_alternatif == "PHX" ~ "VAI",
+           TRUE ~ esp_code_alternatif
+        )
+      )
 
   # Permet de sélectionner les codes espèces dans le fichier "passerelle_taxo"
   # disponible dans le package aspe. On ne sélectionne que les codes "valides",
