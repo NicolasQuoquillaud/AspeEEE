@@ -1,2 +1,2 @@
-# select_sp
-permet de sélectionner et renommer les espèces de poissons que l'on veut sur la base ASPE
+# AspeEEE
+Package R pour tester l'impact de l'arrivée du spirlin sur les communautés de poissons à partir des données de la base ASPE de l'OFB.
